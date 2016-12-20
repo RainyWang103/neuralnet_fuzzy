@@ -1,0 +1,47 @@
+[System]
+Name='fuzzy_sin2pi'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=9
+AndMethod='prod'
+OrMethod='max'
+ImpMethod='prod'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='x'
+Range=[0 1]
+NumMFs=9
+MF1='A1':'trimf',[-0.125 0 0.125]
+MF2='A2':'trimf',[0 0.125 0.25]
+MF3='A3':'trimf',[0.125 0.25 0.375]
+MF4='A4':'trimf',[0.25 0.375 0.5]
+MF5='A5':'trimf',[0.375 0.5 0.625]
+MF6='A6':'trimf',[0.5 0.625 0.75]
+MF7='A7':'trimf',[0.625 0.75 0.875]
+MF8='A8':'trimf',[0.75 0.875 1]
+MF9='A9':'trimf',[0.875 1 1.125]
+
+[Output1]
+Name='y'
+Range=[-1.5 1.5]
+NumMFs=5
+MF1='B1':'trimf',[-1.2071 -1 -0.7929]
+MF2='B2':'trimf',[-0.9142 -0.7071 -0.5]
+MF3='B3':'trimf',[-0.2071 0 0.2071]
+MF4='B4':'trimf',[0.5 0.7071 0.9142]
+MF5='B5':'trimf',[0.7929 1 1.2071]
+
+[Rules]
+1, 3 (1) : 1
+2, 4 (1) : 1
+3, 5 (1) : 1
+4, 4 (1) : 1
+5, 3 (1) : 1
+6, 2 (1) : 1
+7, 1 (1) : 1
+8, 2 (1) : 1
+9, 3 (1) : 1
